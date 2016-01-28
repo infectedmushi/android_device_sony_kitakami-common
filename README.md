@@ -16,4 +16,4 @@ Be aware that this tree is far beyond finished and WIP, which means that it may 
 
 If you have a question or have a request to join the development, please don't bother to contact us via this email : ctx.xda@gmail.com
 
-Special thans to the official Sony developer team for providing their sources to the public!
+Special thanks to the official Sony developer team for providing their sources to the public!
