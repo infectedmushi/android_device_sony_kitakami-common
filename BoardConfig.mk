@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+LOCAL_PATH := device/sony/kitakami
+
 PRODUCT_VENDOR_KERNEL_HEADERS := device/sony/kitakami/kernel-headers
 
 TARGET_BOARD_PLATFORM := msm8994
