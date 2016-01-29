@@ -66,6 +66,9 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 TARGET_RECOVERY_FSTAB = device/sony/kitakami/rootdir/fstab.kitakami
 
+# Include path
+TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
+
 # GFX
 USE_OPENGL_RENDERER := true
 TARGET_USES_ION := true
