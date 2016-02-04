@@ -176,6 +176,8 @@ PRODUCT_PACKAGES += \
     libmmjpeg_interface \
     libmm-qcamera \
     libqomx_core \
+    libstlport \
+    libboringssl-compat \
     camera.msm8994
 
 # Keymaster
