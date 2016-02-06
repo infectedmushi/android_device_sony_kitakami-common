@@ -98,16 +98,12 @@ PRODUCT_PACKAGES += \
 
 # CAMERA
 PRODUCT_PACKAGES += \
-<<<<<<< HEAD
     libmmcamera_interface \
     libmmjpeg_interface \
     libmm-qcamera \
     libqomx_core \
     libstlport \
     libboringssl-compat \
-=======
->>>>>>> dc372ca... move common props
-    camera.msm8994
 
 # Keymaster
 PRODUCT_PACKAGES += \
