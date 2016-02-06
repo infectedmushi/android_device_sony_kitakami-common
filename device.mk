@@ -104,6 +104,7 @@ PRODUCT_PACKAGES += \
     libqomx_core \
     libstlport \
     libboringssl-compat \
+    camera.msm8994
 
 # Keymaster
 PRODUCT_PACKAGES += \
