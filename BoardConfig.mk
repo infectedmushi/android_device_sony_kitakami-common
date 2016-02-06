@@ -82,10 +82,5 @@ TARGET_PER_MGR_ENABLED := true
 # NFC
 NFC_NXP_CHIP_TYPE := PN547C2
 
-# Enable dex-preoptimization to speed up first boot sequence
-ifeq ($(HOST_OS),linux)
-    WITH_DEXPREOPT ?= true
-endif
-
 # SELinux
 BOARD_SEPOLICY_DIRS += device/sony/kitakami/sepolicy
