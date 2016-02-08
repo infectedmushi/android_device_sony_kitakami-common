@@ -87,3 +87,5 @@ NFC_NXP_CHIP_TYPE := PN547C2
 
 # SELinux
 BOARD_SEPOLICY_DIRS += device/sony/kitakami/sepolicy
+
+include device/sony/common/CommonConfig.mk
