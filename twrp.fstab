@@ -1,0 +1,9 @@
+/boot		emmc		/dev/block/bootdevice/by-name/kernel	default
+/recovery	emmc		/dev/block/bootdevice/by-name/recovery	default
+/cache		ext4		/dev/block/bootdevice/by-name/cache		default
+/system		ext4		/dev/block/bootdevice/by-name/system	default
+/data		ext4		/dev/block/bootdevice/by-name/userdata	default wait,length=-16384
+/modem		emmc		/dev/block/bootdevice/by-name/modem		default
+/persist	emmc		/dev/block/bootdevice/by-name/config	default
+
+/sdcard		vfat		/devices/soc.0/f98a4900.sdhci/mmc_host	
