@@ -110,6 +110,6 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_PER_MGR_ENABLED := true
 
 # NFC
-NFC_NXP_CHIP_TYPE := PN547C2
+BOARD_NFC_CHIPSET := pn547
 
 include device/sony/common/CommonConfig.mk
