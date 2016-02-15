@@ -20,8 +20,9 @@ include device/sony/common/CommonConfig.mk
 #Architecture
 TARGET_BOARD_PLATFORM := msm8994
 
-#Include QCOM common sepolicy
+#SELINUX
 include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += device/sony/common/sepolicy
 
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -94,8 +95,5 @@ NFC_NXP_CHIP_TYPE := PN547C2
 
 # Disable Dexpreopt
 WITH_DEXPREOPT := false
-
-# SELinux
-BOARD_SEPOLICY_DIRS += device/sony/kitakami/sepolicy
 
 include device/sony/common/CommonConfig.mk
