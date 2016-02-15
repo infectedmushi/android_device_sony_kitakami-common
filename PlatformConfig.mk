@@ -20,10 +20,6 @@ include device/sony/common/CommonConfig.mk
 #Architecture
 TARGET_BOARD_PLATFORM := msm8994
 
-#SELINUX
-include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/sony/common/sepolicy
-
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
