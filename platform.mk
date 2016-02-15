@@ -93,10 +93,6 @@ PRODUCT_PACKAGES += \
     libstlport \
     camera.msm8994
 
-# Keymaster
-PRODUCT_PACKAGES += \
-    keystore.msm8994
-
 # RILD
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
