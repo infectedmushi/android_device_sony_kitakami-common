@@ -20,6 +20,9 @@ include device/sony/common/CommonConfig.mk
 #Architecture
 TARGET_BOARD_PLATFORM := msm8994
 
+#Include QCOM common sepolicy
+include device/qcom/sepolicy/sepolicy.mk
+
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
