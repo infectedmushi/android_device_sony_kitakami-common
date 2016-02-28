@@ -92,6 +92,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gps.msm8994
 
+# Power
+PRODUCT_PACKAGES += \
+    power.msm8994
+
 # CAMERA
 PRODUCT_PACKAGES += \
     libmmcamera_interface \
@@ -112,3 +116,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # report major/minor versions as 3/1
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196609
+
+# QCOM Proprietary perf
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.extension_library=libqti-perfd-client.so

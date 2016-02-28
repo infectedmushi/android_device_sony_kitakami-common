@@ -63,6 +63,18 @@ on boot
     symlink /dev/pn54x /dev/pn544
     symlink /dev/pn54x /dev/pn547
 
+on post-fs-data
+    #Create PERFD deamon related dirs
+    mkdir /data/misc/perfd 0755 root system
+    chmod 2755 /data/misc/perfd
+    mkdir /data/system/perfd 0770 root system
+    chmod 2770 /data/system/perfd
+
+service perfd /system/bin/perfd
+    class main
+    user root
+    disabled
+
 # OSS WLAN and BT MAC setup
 service macaddrsetup /system/bin/macaddrsetup
     user root
