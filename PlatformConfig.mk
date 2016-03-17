@@ -89,7 +89,4 @@ TARGET_PER_MGR_ENABLED := true
 # NFC
 NFC_NXP_CHIP_TYPE := PN547C2
 
-# Disable Dexpreopt
-WITH_DEXPREOPT := false
-
 include device/sony/common/CommonConfig.mk
