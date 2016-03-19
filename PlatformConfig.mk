@@ -83,6 +83,9 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUEDROID_VENDOR_CONF := device/sony/kitakami/bluetooth/vnd_generic.txt
 
+# CAM
+USE_DEVICE_SPECIFIC_CAMERA := true
+
 # RIL
 TARGET_PER_MGR_ENABLED := true
 
