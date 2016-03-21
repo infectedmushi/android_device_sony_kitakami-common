@@ -16,31 +16,24 @@
  ***
  ****************************************************************************
  ****************************************************************************/
-#ifndef _LINUX_PN547_H
-#define _LINUX_PN547_H
-#define PN547_MAGIC 0xE9
-#define PN547_SET_PWR _IOW(PN547_MAGIC, 0x01, unsigned int)
+#ifndef _CALIB_HWDEP_H
+#define _CALIB_HWDEP_H
+#define WCD9XXX_CODEC_HWDEP_NODE 1000
+enum wcd_cal_type {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-enum pn547_state {
-  PN547_STATE_UNKNOWN,
-  PN547_STATE_OFF,
-  PN547_STATE_ON,
+  WCD9XXX_MIN_CAL,
+  WCD9XXX_ANC_CAL = WCD9XXX_MIN_CAL,
+  WCD9XXX_MAD_CAL,
+  WCD9XXX_MBHC_CAL,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-  PN547_STATE_FWDL,
+  WCD9XXX_MAX_CAL,
 };
-struct pn547_i2c_platform_data {
-  void(* conf_gpio) (void);
+struct wcdcal_ioctl_buffer {
+  __u32 size;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-  int irq_gpio;
-  int ven_gpio;
-  int firm_gpio;
-  int pvdd_en_gpio;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-  int configure_gpio;
-  int configure_mpp;
-  bool dynamic_config;
+  __u8 __user * buffer;
+  enum wcd_cal_type cal_type;
 };
+#define SNDRV_CTL_IOCTL_HWDEP_CAL_TYPE _IOW('U', 0x1, struct wcdcal_ioctl_buffer)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define board_nfc_parse_dt(x,...) 0
-#define board_nfc_hw_lag_check(x,...) 0
 #endif

@@ -16,30 +16,28 @@
  ***
  ****************************************************************************
  ****************************************************************************/
-#ifndef _UAPI_MSM_CHARM_H_
-#define _UAPI_MSM_CHARM_H_
-#define CHARM_CODE 0xCC
-#define WAKE_CHARM _IO(CHARM_CODE, 1)
+#ifndef __MSM_CORE_LIB_H__
+#define __MSM_CORE_LIB_H__
+#include <linux/ioctl.h>
+#define TEMP_DATA_POINTS 13
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define RESET_CHARM _IO(CHARM_CODE, 2)
-#define CHECK_FOR_BOOT _IOR(CHARM_CODE, 3, int)
-#define WAIT_FOR_BOOT _IO(CHARM_CODE, 4)
-#define NORMAL_BOOT_DONE _IOW(CHARM_CODE, 5, int)
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define RAM_DUMP_DONE _IOW(CHARM_CODE, 6, int)
-#define WAIT_FOR_RESTART _IOR(CHARM_CODE, 7, int)
-#define GET_DLOAD_STATUS _IOR(CHARM_CODE, 8, int)
-#define IMAGE_UPGRADE _IOW(CHARM_CODE, 9, int)
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define SHUTDOWN_CHARM _IOW(CHARM_CODE, 10, int)
-enum charm_boot_type {
-  CHARM_NORMAL_BOOT = 0,
-  CHARM_RAM_DUMPS,
+#define MAX_NUM_FREQ 200
+enum msm_core_ioctl_params {
+  MSM_CORE_LEAKAGE,
+  MSM_CORE_VOLTAGE,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
-enum image_upgrade_type {
-  APQ_CONTROLLED_UPGRADE = 0,
-  MDM_CONTROLLED_UPGRADE,
+#define MSM_CORE_MAGIC 0x9D
+struct sched_params {
+  uint32_t cpumask;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  uint32_t cluster;
+  uint32_t power[TEMP_DATA_POINTS][MAX_NUM_FREQ];
+  uint32_t voltage[MAX_NUM_FREQ];
+  uint32_t freq[MAX_NUM_FREQ];
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
+#define EA_LEAKAGE _IOWR(MSM_CORE_MAGIC, MSM_CORE_LEAKAGE, struct sched_params)
+#define EA_VOLT _IOWR(MSM_CORE_MAGIC, MSM_CORE_VOLTAGE, struct sched_params)
 #endif
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */

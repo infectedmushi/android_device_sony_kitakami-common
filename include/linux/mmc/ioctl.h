@@ -16,40 +16,38 @@
  ***
  ****************************************************************************
  ****************************************************************************/
-#ifndef _UAPI_LINUX_MSM_ADSP_H
-#define _UAPI_LINUX_MSM_ADSP_H
+#ifndef LINUX_MMC_IOCTL_H
+#define LINUX_MMC_IOCTL_H
 #include <linux/types.h>
-#include <linux/ioctl.h>
+struct mmc_ioc_cmd {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define ADSP_IOCTL_MAGIC 'q'
-struct adsp_command_t {
-  uint16_t queue;
-  uint32_t len;
+  int write_flag;
+  int is_acmd;
+  __u32 opcode;
+  __u32 arg;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-  uint8_t * data;
+  __u32 response[4];
+  unsigned int flags;
+  unsigned int blksz;
+  unsigned int blocks;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  unsigned int postsleep_min_us;
+  unsigned int postsleep_max_us;
+  unsigned int data_timeout_ns;
+  unsigned int cmd_timeout_ms;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u32 __pad;
+  __u64 data_ptr;
 };
-struct adsp_event_t {
-  uint16_t type;
+#define mmc_ioc_cmd_set_data(ic,ptr) ic.data_ptr = (__u64) (unsigned long) ptr
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-  uint32_t timeout_ms;
-  uint16_t msg_id;
-  uint16_t flags;
-  uint32_t len;
+#define MMC_IOC_CMD _IOWR(MMC_BLOCK_MAJOR, 0, struct mmc_ioc_cmd)
+#define MMC_IOC_MAX_RPMB_CMD 3
+struct mmc_ioc_rpmb {
+  struct mmc_ioc_cmd cmds[MMC_IOC_MAX_RPMB_CMD];
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-  uint8_t * data;
 };
-#define ADSP_IOCTL_ENABLE _IOR(ADSP_IOCTL_MAGIC, 1, unsigned)
-#define ADSP_IOCTL_DISABLE _IOR(ADSP_IOCTL_MAGIC, 2, unsigned)
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define ADSP_IOCTL_DISABLE_ACK _IOR(ADSP_IOCTL_MAGIC, 3, unsigned)
-#define ADSP_IOCTL_WRITE_COMMAND _IOR(ADSP_IOCTL_MAGIC, 4, struct adsp_command_t *)
-#define ADSP_IOCTL_GET_EVENT _IOWR(ADSP_IOCTL_MAGIC, 5, struct adsp_event_data_t *)
-#define ADSP_IOCTL_SET_CLKRATE _IOR(ADSP_IOCTL_MAGIC, 6, unsigned)
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define ADSP_IOCTL_DISABLE_EVENT_RSP _IOR(ADSP_IOCTL_MAGIC, 10, unsigned)
-#define ADSP_IOCTL_REGISTER_PMEM _IOW(ADSP_IOCTL_MAGIC, 13, unsigned)
-#define ADSP_IOCTL_UNREGISTER_PMEM _IOW(ADSP_IOCTL_MAGIC, 14, unsigned)
-#define ADSP_IOCTL_ABORT_EVENT_READ _IOW(ADSP_IOCTL_MAGIC, 15, unsigned)
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define ADSP_IOCTL_LINK_TASK _IOW(ADSP_IOCTL_MAGIC, 16, unsigned)
+#define MMC_IOC_RPMB_CMD _IOWR(MMC_BLOCK_MAJOR, 0, struct mmc_ioc_rpmb)
+#define MMC_IOC_MAX_BYTES (512L * 256)
 #endif
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
