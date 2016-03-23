@@ -17,6 +17,9 @@ LOCAL_PATH := device/sony/kitakami
 #Include common tree
 include device/sony/common/CommonConfig.mk
 
+#Include Kernel headers
+include hardware/qcom/msm8994/msm8994.mk
+
 #Architecture
 TARGET_BOARD_PLATFORM := msm8994
 
