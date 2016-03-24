@@ -68,7 +68,9 @@ TARGET_TWRP_FSTAB := true
 TW_THEME := portrait_hdpi
 #BOARD_HAS_NO_REAL_SDCARD := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
-RECOVERY_VARIANT := twrp
+BOARD_KERNEL_CMDLINE := androidboot.hardware=/dev/block/platform/soc.0/f9824900.sdhci 
+BOARD_KERNEL_CMDLINE += user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 
+BOARD_KERNEL_CMDLINE += boot_cpus=0-5 dwc3_msm.prop_chg_detect=Y coherent_pool=2M dwc3_msm.hvdcp_max_current=1500 enforcing=0
 endif
 
 ifeq ($(TARGET_TWRP_FSTAB),true)
