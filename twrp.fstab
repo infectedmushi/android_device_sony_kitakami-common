@@ -10,7 +10,7 @@
 /usb-otg     vfat /dev/block/sda1                          flags=display="USB OTG"             ; storage;wipeingui ; removable
 /firmware    vfat /dev/block/bootdevice/by-name/modem      flags=display="Firmware"            ; backup=1
 /appslog     ext4 /dev/block/bootdevice/by-name/apps_log   flags=display="AppsLog"             ; backup=1          ; usermrf
-/oem         ext4 /dev/block/bootdevice/by-name/oem	       flags=display="OEM"                 ; backup=1          ;
+/oem         ext4 /dev/block/bootdevice/by-name/oem        flags=display="OEM"                 ; backup=1;
 /persist     ext4 /dev/block/bootdevice/by-name/persist    flags=display="Persist"             ; backup=1          ;
 /lta-label   ext4 /dev/block/bootdevice/by-name/LTALabel   flags=display="LTALabel"            ; backup=1          ;
 /diag        ext4 /dev/block/bootdevice/by-name/diag       flags=display="Diag"                ; backup=1          ;
