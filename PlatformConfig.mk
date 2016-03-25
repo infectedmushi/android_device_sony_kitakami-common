@@ -63,17 +63,22 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 ifeq ($(RECOVERY_VARIANT),twrp)
-PROJECT_PATH_AGREES := true
 TARGET_TWRP_FSTAB := true
+PROJECT_PATH_AGREES := true
+RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_FSTAB = device/sony/kitakami/twrp.fstab
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_THEME := portrait_hdpi
 #BOARD_HAS_NO_REAL_SDCARD := true
+TW_HAS_NO_RECOVERY_PARTITION := true
+TW_IGNORE_ABS_MT_TRACKING_ID := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 BOARD_KERNEL_CMDLINE := androidboot.hardware=/dev/block/platform/soc.0/f9824900.sdhci 
 BOARD_KERNEL_CMDLINE += user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 
 BOARD_KERNEL_CMDLINE += boot_cpus=0-5 dwc3_msm.prop_chg_detect=Y coherent_pool=2M dwc3_msm.hvdcp_max_current=1500 enforcing=0
 endif
 
+# Use normal FSTAB for recovery if we aren't building TWRP
 ifneq ($(TARGET_TWRP_FSTAB),true)
 TARGET_RECOVERY_FSTAB = device/sony/kitakami/rootdir/fstab.kitakami
 endif
