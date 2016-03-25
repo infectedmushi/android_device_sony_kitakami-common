@@ -64,6 +64,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 ifeq ($(RECOVERY_VARIANT),twrp)
 PROJECT_PATH_AGREES := true
+TARGET_TWRP_FSTAB := true
 TARGET_RECOVERY_FSTAB = device/sony/kitakami/twrp.fstab
 TW_THEME := portrait_hdpi
 #BOARD_HAS_NO_REAL_SDCARD := true
