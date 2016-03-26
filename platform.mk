@@ -29,7 +29,14 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/etc/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     $(SONY_ROOT)/system/etc/audio_platform_info_i2s.xml:system/etc/audio_platform_info_i2s.xml \
     $(SONY_ROOT)/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
-    $(SONY_ROOT)/system/etc/media_profiles.xml:system/etc/media_profiles.xml
+    $(SONY_ROOT)/system/etc/media_profiles.xml:system/etc/media_profiles.xml \
+	$(SONY_ROOT)/system/etc/media_codecs_google_video.xml \
+	$(SONY_ROOT)/system/etc/media_codecs_performance.xml \
+	$(SONY_ROOT)/system/etc/media_codecs_google_telephony.xml \
+	$(SONY_ROOT)/system/etc/sound_trigger_platform_info.xml \
+	$(SONY_ROOT)/system/etc/mixer_paths_i2s.xml \
+	$(SONY_ROOT)/system/etc/sound_trigger_mixer_paths.xml \
+	$(SONY_ROOT)/system/etc/media_codecs_google_audio.xml
 
 # Broadcom BT
 PRODUCT_COPY_FILES += \
