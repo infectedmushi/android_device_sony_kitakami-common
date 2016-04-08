@@ -108,6 +108,9 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUEDROID_VENDOR_CONF := device/sony/kitakami/bluetooth/vnd_generic.txt
 
+# SELINUX
+TARGET_SKIP_SETEXECONN_CHECK := true
+
 # CAM
 USE_DEVICE_SPECIFIC_CAMERA := true
 

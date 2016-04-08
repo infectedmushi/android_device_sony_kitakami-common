@@ -57,8 +57,16 @@ extern int getexeccon(char ** con);
 extern int getexeccon_raw(char ** con);
 
 /* Set exec security context for the next execve. 
-   Call with NULL if you want to reset to the default. */
+   Call with NULL if you want to reset to the default.
+   If SKIP_SETEXECCON_CHECK is set true it will force setexeccon to return 1 meaning it will skip all setexeccon checks */ 
+#ifdef SKIP_SETEXECCON_CHECK
+int setexeccon(const char * con)
+{
+	return 1;
+}
+#else
 extern int setexeccon(const char * con);
+#endif // SKIP_SETEXECCON_CHECK
 extern int setexeccon_raw(const char * con);
 
 /* Get fscreate context, and set *con to refer to it.
