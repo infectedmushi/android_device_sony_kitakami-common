@@ -43,6 +43,7 @@ TARGET_USES_64_BIT_BCMDHD := true
 ENABLE_CPUSETS := true
 
 #Kernel
+BUILD_KERNEL := true
 TARGET_KERNEL_SOURCE := kernel/sony/kitakami
 
 BOARD_KERNEL_BASE        := 0x00000000
