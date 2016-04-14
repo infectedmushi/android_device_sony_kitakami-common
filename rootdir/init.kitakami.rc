@@ -38,6 +38,10 @@ on boot
     chown system system /sys/devices/virtual/input/maxim_sti/gesture_wakeup
     chmod 0660 /sys/devices/virtual/input/maxim_sti/gesture_wakeup
 
+    # Direct Torch access
+    chown system system /sys/class/leds/torch-light1/brightness
+    chmod 777 /sys/class/leds/torch-light1/brightness
+
     # Glove mode
     chown system system /sys/devices/virtual/input/clearpad/glove
     chmod 0660 /sys/devices/virtual/input/clearpad/glove
