@@ -1,0 +1,8 @@
+#!/system/bin/sh
+
+# --Torch disable script--
+# Chainloads flashlight patch to gain access to /sys/class/leds/torch-light1/brightness
+# Can be executed by entering the following into the android shell: torch-off
+# Function : Toggles flashlight off
+
+echo 0 > /sys/class/leds/torch-light1/brightness
