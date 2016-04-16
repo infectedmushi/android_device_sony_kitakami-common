@@ -70,7 +70,10 @@ PRODUCT_COPY_FILES += \
 
 # TORCH
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/torch/torch:system/bin/torch
+	$(LOCAL_PATH)/torch/torch-on:system/bin/torch-on \
+	$(LOCAL_PATH)/torch/torch-off:system/bin/torch-off
+
+
 
 # Device Specific Hardware
 PRODUCT_COPY_FILES += \
