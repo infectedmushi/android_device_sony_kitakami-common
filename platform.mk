@@ -21,6 +21,8 @@ $(call inherit-product-if-exists, buildable/ota/DisableBlockBasedOTA.mk)
 
 SOMC_PLATFORM := kitakami
 
+LOCAL_PATH := device/sony/kitakami
+
 SONY_ROOT := device/sony/kitakami/rootdir
 
 # Media
@@ -65,6 +67,10 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/etc/data/dsi_config.xml:system/etc/data/dsi_config.xml \
     $(SONY_ROOT)/system/etc/data/netmgr_config.xml:system/etc/data/netmgr_config.xml \
     $(SONY_ROOT)/system/etc/data/qmi_config.xml:system/etc/data/qmi_config.xml
+
+# TORCH
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/torch/torch:system/bin/torch
 
 # Device Specific Hardware
 PRODUCT_COPY_FILES += \
