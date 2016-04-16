@@ -18,6 +18,8 @@ $(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
 
 SOMC_PLATFORM := kitakami
 
+LOCAL_PATH := device/sony/kitakami
+
 SONY_ROOT := device/sony/kitakami/rootdir
 
 # Media
@@ -48,6 +50,10 @@ PRODUCT_COPY_FILES += \
 # MSM IRQ Balancer configuration file
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/etc/msm_irqbalance.conf:system/etc/msm_irqbalance.conf
+
+# TORCH
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/torch/torch:system/bin/torch
 
 # Device Specific Hardware
 PRODUCT_COPY_FILES += \
