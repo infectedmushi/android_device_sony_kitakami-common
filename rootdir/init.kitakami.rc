@@ -41,8 +41,8 @@ on boot
     # Direct Torch access
     chown system system /sys/class/leds/torch-light1/brightness
     chown system system /system/bin/torch    
-    chmod 777 /sys/class/leds/torch-light1/brightness
-    chmod 444 /system/bin/torch
+    chmod 666 /sys/class/leds/torch-light1/brightness
+    chmod 755 /system/bin/torch
 
     # Glove mode
     chown system system /sys/devices/virtual/input/clearpad/glove
