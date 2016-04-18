@@ -6,7 +6,7 @@
 # Function : Toggles flashlight
 
 if [ $(cat /sys/class/leds/torch-light1/brightness) = "0" ]; then
-	echo 1 > /sys/class/leds/torch-light1/brightness
+	echo 80 > /sys/class/leds/torch-light1/brightness
 else
 	echo 0 > /sys/class/leds/torch-light1/brightness
 fi
