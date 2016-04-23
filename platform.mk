@@ -42,7 +42,8 @@ PRODUCT_COPY_FILES += \
 
 # Broadcom BT
 PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/system/etc/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
+    $(SONY_ROOT)/system/etc/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf \
+    $(SONY_ROOT)/system/etc/bluetooth/iot_devlist.conf:system/etc/bluetooth/iot_devlist.conf
 
 # IDC
 PRODUCT_COPY_FILES += \
