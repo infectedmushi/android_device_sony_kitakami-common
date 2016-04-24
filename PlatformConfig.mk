@@ -104,10 +104,14 @@ WIFI_DRIVER_FW_PATH_AP      := "/vendor/firmware/fw_bcmdhd_apsta.bin"
 WIFI_DRIVER_FW_PATH_STA     := "/vendor/firmware/fw_bcmdhd.bin"
 
 # BT definitions for Broadcom solution
+
+ifneq ($(TARGET_DEVICE), suzuran)
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/kitakami/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := device/sony/kitakami/bluetooth/vnd_generic.txt
+endif
+
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUEDROID_VENDOR_CONF := device/sony/kitakami/bluetooth/vnd_generic.txt
 
 # SELINUX
 TARGET_SKIP_SETEXECCON_VOLD_CHECK := true

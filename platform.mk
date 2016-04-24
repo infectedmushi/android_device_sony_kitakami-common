@@ -42,8 +42,12 @@ PRODUCT_COPY_FILES += \
 
 # Broadcom BT
 PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/system/etc/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf \
     $(SONY_ROOT)/system/etc/bluetooth/iot_devlist.conf:system/etc/bluetooth/iot_devlist.conf
+
+ifneq ($(TARGET_DEVICE), suzuran)
+PRODUCT_COPY_FILES += \
+    $(SONY_ROOT)/system/etc/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
+endif    
 
 # IDC
 PRODUCT_COPY_FILES += \
