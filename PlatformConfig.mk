@@ -107,7 +107,7 @@ WIFI_DRIVER_FW_PATH_STA     := "/vendor/firmware/fw_bcmdhd.bin"
 
 ifneq ($(TARGET_DEVICE), suzuran)
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/kitakami/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/sony/kitakami/bluetooth/vnd_generic.txt
+BOARD_CUSTOM_BT_CONFIG := device/sony/kitakami/bluetooth/vnd_generic.txt
 endif
 
 BOARD_HAVE_BLUETOOTH := true
