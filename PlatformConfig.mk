@@ -12,20 +12,34 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Proprietary files
+SONY_AOSP ?= true
 
+# Include path
+TARGET_SPECIFIC_HEADER_PATH += device/sony/kitakami-common/include
+
+#Include Kernel headers
+include hardware/qcom/msm8994/msm8994.mk
+
+#Architecture
 TARGET_BOARD_PLATFORM := msm8994
 
+TARGET_POWERHAL_VARIANT := qcom
+
+# Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_VARIANT := generic
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a7
+TARGET_2ND_CPU_VARIANT := cortex-a53.a57
+
+TARGET_CPU_CORTEX_A53 := true
 
 TARGET_USES_64_BIT_BINDER := true
 TARGET_USES_64_BIT_BCMDHD := true
@@ -42,9 +56,13 @@ BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 boot_cpus=0-5
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9-kernel/bin
+KERNEL_TOOLCHAIN_PREFIX := aarch64-
+
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_MODULES := true
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 5513412608
@@ -72,11 +90,17 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_CUSTOM_BT_CONFIG := device/sony/kitakami-common/bluetooth/vnd_generic.txt
 
+# SELINUX
+TARGET_SKIP_SETEXECCON_VOLD_CHECK := true
+
+# CAM
+USE_DEVICE_SPECIFIC_CAMERA := true
+
 # RIL
 TARGET_PER_MGR_ENABLED := true
 
 # NFC
-NFC_NXP_CHIP_TYPE := PN547C2
+BOARD_NFC_CHIPSET := pn547
 
 # Disable Dexpreopt
 WITH_DEXPREOPT := false
@@ -85,4 +109,3 @@ WITH_DEXPREOPT := false
 BOARD_SEPOLICY_DIRS += device/sony/kitakami-common/sepolicy
 
 include device/sony/common/CommonConfig.mk
-include device/sony/common/CommonConfigCarbon.mk
