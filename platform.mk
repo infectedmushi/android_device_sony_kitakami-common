@@ -21,9 +21,9 @@ $(call inherit-product-if-exists, buildable/ota/DisableBlockBasedOTA.mk)
 
 SOMC_PLATFORM := kitakami
 
-LOCAL_PATH := device/sony/kitakami
+LOCAL_PATH := device/sony/kitakami-common
 
-SONY_ROOT := device/sony/kitakami/rootdir
+SONY_ROOT := device/sony/kitakami-common/rootdir
 
 # Media
 PRODUCT_COPY_FILES += \
