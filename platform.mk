@@ -67,7 +67,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     NfcNci \
-    Tag
+    Tag \
+	nfc_nci.pn54x.default
 
 # Audio
 PRODUCT_PACKAGES += \
