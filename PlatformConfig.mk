@@ -81,6 +81,9 @@ BOARD_NFC_CHIPSET := pn547
 # Disable Dexpreopt
 WITH_DEXPREOPT := false
 
+# Props for hotplugging
+TARGET_SYSTEM_PROP += device/sony/kitakami/system.prop
+
 # SELinux
 BOARD_SEPOLICY_DIRS += device/sony/kitakami/sepolicy
 
