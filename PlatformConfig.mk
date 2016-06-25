@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+TARGET_BOOT_ANIMATION_RES := 1080
 
 TARGET_BOARD_PLATFORM := msm8994
 
@@ -83,8 +84,5 @@ NFC_NXP_CHIP_TYPE := PN547C2
 
 # Disable Dexpreopt
 WITH_DEXPREOPT := false
-
-# SELinux
-BOARD_SEPOLICY_DIRS += device/sony/kitakami/sepolicy
 
 include device/sony/common/CommonConfig.mk
