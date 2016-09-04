@@ -81,9 +81,6 @@ TARGET_PER_MGR_ENABLED := true
 # NFC
 BOARD_NFC_CHIPSET := pn547
 
-# Disable Dexpreopt
-WITH_DEXPREOPT := false
-
 # Props for hotplugging
 TARGET_SYSTEM_PROP += device/sony/kitakami/system.prop
 
